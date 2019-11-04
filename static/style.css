@@ -1,0 +1,39 @@
+body{
+    font-family: 'Lexend Deca', sans-serif;
+    text-align: justify;
+}
+code, pre{
+    font-family: 'Roboto Mono', monospace;
+    background-color: #f6f8fa;
+    padding: 4px;
+    border-radius: 2px;
+    overflow: auto;
+    font-size: 10px;;
+}
+.pd{
+    padding: 10px;
+}
+.code{
+    font-family: 'Roboto Mono', monospace;
+}
+h1{
+    line-height: 0;
+    font-size: 3.5vmax;
+}
+.footer{
+    text-align: center;
+    padding: 15px 10px;
+}
+hr{
+    border: solid 1px #888;
+}
+.wr{
+    word-wrap: break-word;
+}
+a{
+    color: #1e87f0;
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
+}
