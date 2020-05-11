@@ -7,7 +7,7 @@
     <link rel="shortcut icon" href="static/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-grid-only@1.0.0/bootstrap.css">
     <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Lexend+Deca|Roboto+Mono:400,700&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Manrope|Roboto+Mono:400,700&display=swap" rel="stylesheet"> 
     <link type="text/css" rel="stylesheet" href="static/style.css">
     <title>tinyurl-rest-wrapper | Documentation</title>
 </head>
@@ -23,6 +23,13 @@
         <hr>
         <div class="row">
             <div class="col">
+                <input type="text" id="url" class="code" placeholder="URL to shorten" value="">
+                <button id="shorten">Shorten</button>
+                <p id="tinyurl-link" class="code"></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
                 <h3 class="code">Intro</h3>
                 <p>
                     TinyURL API, <code>https://tinyurl.com/api-create.php?url=&lt;url-to-shorten&gt;</code> will be blocked on a normal fetch() or XMLHttpRequest() command because of <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">Cross-Origin Resource Sharing (CORS) policy</a>. This is a RESTful API built on top of the old TinyURL api and will allow you to use TinyURL url shortener using fetch() or XMLHttpRequest() methods.
@@ -34,6 +41,8 @@
                 <h3 class="code">Usage</h3>
                 <p>API URL</p>
                 <code class="pd">https://tinyurl-rest-wrapper.herokuapp.com/shorten?url=&lt;url-to-shorten&gt;</code>
+                <br/>
+                <br>
                 <p>Example usage using fetch()</p>
                 <pre class="prettyprint lang-js pd">
 let url = "https://www.google.com"  //url to shorten
@@ -64,4 +73,5 @@ fetch(`https://tinyurl-rest-wrapper.herokuapp.com/shorten?url=${encodeURICompone
         </div>
     </div>
 </body>
+<script src="static/app.js"></script>
 </html>
