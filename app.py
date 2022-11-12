@@ -26,4 +26,4 @@ def shorten_url():
     return jsonify(res)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
