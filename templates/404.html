@@ -9,16 +9,30 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <title>404 - tinyurl-rest-wrapper</title>
   </head>
-  <body>
-    <div class="max-w-screen-md mx-auto px-4 pt-40">
-      <h1 class="text-4xl font-bold">404. That's an error 😥</h1>
+  <body class="min-h-screen flex flex-col justify-center items-center">
+    <div class="max-w-screen-md mx-auto px-10 pb-8">
+      <span class="text-4xl">😥</span>
+      <h1 class="text-3xl font-bold">404. That's an error.</h1>
       <p>The requested URL was not found on this server.</p>
       <br />
       <a
         href="/"
         class="px-4 py-3 rounded-lg bg-slate-900 hover:bg-slate-700 drop-shadow-lg hover:drop-shadow-none text-white"
       >
-        &larr; take me home</a
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+          class="w-5 h-5 inline"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M15 10a.75.75 0 01-.75.75H7.612l2.158 1.96a.75.75 0 11-1.04 1.08l-3.5-3.25a.75.75 0 010-1.08l3.5-3.25a.75.75 0 111.04 1.08L7.612 9.25h6.638A.75.75 0 0115 10z"
+            clip-rule="evenodd"
+          />
+        </svg>
+
+        take me home</a
       >
     </div>
   </body>
