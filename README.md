@@ -13,19 +13,23 @@ TinyURL API, `https://tinyurl.com/api-create.php?url=<url-to-shorten>` will be b
 API URL
 
 ```
-https://tinyurl-rest-wrapper.onrender.com/shorten?url=<url-to-shorten>
+POST https://tinyurl-rest-wrapper.onrender.com/
+BODY { url: <url-to-shorten> }
 ```
 
 Example usage using fetch()
 
 ```javascript
-let url = "https://www.google.com"; //url to shorten
+// URL to shorten
+let url = "https://www.google.com";
 
-fetch(
-  `https://tinyurl-rest-wrapper.onrender.com/shorten?url=${encodeURIComponent(
-    url
-  )}`
-) //encode url using encodeURIComponent() to avoid any possible errors
+fetch("https://tinyurl-rest-wrapper.onrender.com/", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({ url }),
+})
   .then((response) => response.json())
   .then((json) => console.log(json));
 ```
