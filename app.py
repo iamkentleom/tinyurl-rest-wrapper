@@ -7,23 +7,24 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
 
-@app.route('/')
+@app.route('/', methods = ['GET', 'POST'])
 def index():
-    return render_template('index.html')
+    if request.method == 'POST':
+        url = request.values.get('url', request.json.get('url', None))
+        print(url)
+        tinyurl = req.get(f'https://tinyurl.com/api-create.php?url={url}').text
+
+        return jsonify({
+            'tinyurl': tinyurl
+        })
+
+    if request.method == 'GET':
+        return render_template('index.html')
 
 @app.errorhandler(404)
 def not_found(e):
     return render_template('404.html')
 
-@app.route('/shorten')
-def shorten_url():
-    url = request.args.get('url', None)
-    shorten = req.get(f'https://tinyurl.com/api-create.php?url={url}').text
-    res = {
-        'tinyurl' : shorten
-    }
-
-    return jsonify(res)
 
 if __name__ == '__main__':
     app.run()
